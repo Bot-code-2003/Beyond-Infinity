@@ -40,11 +40,11 @@ const HeroSection = () => (
     <div className="absolute inset-0 bg-black opacity-10 "></div>
     <div className="relative z-10 text-center max-w-3xl mx-auto py-4 px-4">
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Welcome to Dev Labs: Beyond the Infinite
+        Welcome to Cosmic Journey.
       </h1>
       <p className="text-xl mb-8">
-        Dev Labs: Beyond the Infinite explores mind-bending paradoxes and the
-        vast mysteries of space, where logic and the cosmos collide.
+        Cosmic Journey explores the wonders of space and the paradoxes that
+        challenge our understanding of reality.
       </p>
       <Link
         to="/articles"
