@@ -27,6 +27,8 @@ app.get("/", (req, res) => {
   res.send("Welcome to Dev Labs Server");
 });
 
+console.log(url);
+
 // Connect to MongoDB and start the server
 mongoose
   // .connect("mongodb://localhost:27017/Beyond-Infinity", {
