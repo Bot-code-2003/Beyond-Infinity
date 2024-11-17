@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Contact from "./Pages/Contact";
-import BlogLandingPage from "./Pages/BlogLandingPage";
+import Contact from "./pages/Contact";
+import BlogLandingPage from "./pages/BlogLandingPage";
 import MarkdownEditor from "./components/MarkdownEditor";
-import ClickedArticle from "./Pages/ClickedArticle";
+import ClickedArticle from "./pages/ClickedArticle";
 import NavbarArticle from "./components/NavbarArticle";
-import Articles from "./Pages/Articles";
+import Articles from "./pages/Articles";
 
 const App = () => {
   return (
