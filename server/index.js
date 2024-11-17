@@ -17,7 +17,7 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(urlencoded({ limit: "30mb", extended: true }));
 
 // Use CORS middleware
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
 
 // Define routes
 app.use("/article", articleRoutes);
