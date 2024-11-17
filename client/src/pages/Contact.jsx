@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-export default function ContactUs() {
+export default function Contact() {
   return (
     <div>
       <h1

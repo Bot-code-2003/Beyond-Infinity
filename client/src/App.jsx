@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ContactUs from "./Pages/Contact";
+import Contact from "./Pages/Contact";
 import BlogLandingPage from "./Pages/BlogLandingPage";
 import MarkdownEditor from "./components/MarkdownEditor";
 import ClickedArticle from "./Pages/ClickedArticle";
@@ -12,7 +12,7 @@ const App = () => {
     <div className="bg-gray-50">
       <Routes>
         <Route path="/" element={<BlogLandingPage />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/editor" element={<MarkdownEditor />} />
         <Route
           path="/article/:slug"
