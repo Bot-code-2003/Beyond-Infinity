@@ -18,6 +18,7 @@ app.use(urlencoded({ limit: "30mb", extended: true }));
 
 // Use CORS middleware
 app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
+// app.use(cors({ origin: "http://localhost:5173" }));
 
 // Define routes
 app.use("/article", articleRoutes);
@@ -42,5 +43,3 @@ mongoose
     )
   )
   .catch((err) => console.log(err));
-
-/* This is a test comment */

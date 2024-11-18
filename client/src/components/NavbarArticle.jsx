@@ -12,7 +12,7 @@ const NavbarArticle = () => {
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <h1 className="text-white text-xl md:text-2xl sm:mb-2 font-bold">
-            Dev Labs Digest
+            Cosmic Journey
           </h1>
           <button onClick={toggleMenu} className="text-white md:hidden">
             <svg

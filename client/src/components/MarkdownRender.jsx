@@ -60,7 +60,7 @@ export default function MarkdownRender({
                 <h3 className="text-lg font-medium mt-4 mb-2" {...props} />
               ),
               p: ({ node, ...props }) => (
-                <p className="mb-4 leading-relaxed" {...props} />
+                <p className="mb-4 leading-relaxed text-gray-700" {...props} />
               ),
               ul: ({ node, ...props }) => (
                 <ul className="list-disc pl-5 mb-4" {...props} />
@@ -68,7 +68,9 @@ export default function MarkdownRender({
               ol: ({ node, ...props }) => (
                 <ol className="list-decimal pl-5 mb-4" {...props} />
               ),
-              li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+              li: ({ node, ...props }) => (
+                <li className="mb-1 text-gray-700" {...props} />
+              ),
               blockquote: ({ node, ...props }) => (
                 <blockquote
                   className="border-l-4 border-gray-300  pl-4 italic my-4 text-gray-600 "
