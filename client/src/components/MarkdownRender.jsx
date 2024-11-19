@@ -131,7 +131,7 @@ export default function MarkdownRender({
                 <mark className="bg-yellow-100  px-1 py-0.5 " {...props} />
               ),
               strong: ({ node, ...props }) => (
-                <strong className="font-semibold" {...props} />
+                <strong className="font-semibold text-black" {...props} />
               ),
             }}
           >

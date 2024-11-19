@@ -67,6 +67,11 @@ const NavbarArticle = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link to="/signin" className="text-white hover:text-blue-300 block">
+              Sign In
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

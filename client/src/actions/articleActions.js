@@ -22,6 +22,7 @@ export const getArticle = (slug) => async (dispatch) => {
     console.log("getArticle action called", data);
 
     dispatch({ type: "GET_ARTICLE", payload: data });
+    incrementViews(slug);
   } catch (error) {
     console.log(error);
   }
