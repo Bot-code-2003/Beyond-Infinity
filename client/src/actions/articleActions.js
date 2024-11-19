@@ -7,8 +7,8 @@ const API = axios.create({
 
 export const incrementViews = (slug) => async (dispatch) => {
   try {
-    dispatch({ type: "INCREMENT_VIEWS", payload: slug });
     await API.patch("/article/incViews", { slug });
+    dispatch({ type: "INCREMENT_VIEWS", payload: slug });
   } catch (error) {
     console.log(error);
   }
@@ -22,7 +22,6 @@ export const getArticle = (slug) => async (dispatch) => {
     console.log("getArticle action called", data);
 
     dispatch({ type: "GET_ARTICLE", payload: data });
-    await dispatch(incrementViews(slug));
   } catch (error) {
     console.log(error);
   }
