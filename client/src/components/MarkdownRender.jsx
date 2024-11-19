@@ -14,11 +14,7 @@ export default function MarkdownRender({
   if (!markdownContent || !title) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-50">
-        <Lottie
-          animationData={LoadingAnimation}
-          loop={true}
-          className="w-24 h-24"
-        />
+        <Lottie animationData={LoadingAnimation} loop={true} className="" />
       </div>
     );
   }

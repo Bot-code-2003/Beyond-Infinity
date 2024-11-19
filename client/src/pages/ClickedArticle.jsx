@@ -4,44 +4,37 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getArticles, getArticle } from "../actions/articleActions"; // Assuming you have this action to fetch articles
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Link } from "react-router-dom";
 
 const ClickedArticle = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { slug } = useParams();
-  console.log("slug", slug);
 
-  // Get the list of articles from the Redux store
-  const { articles } = useSelector((state) => state.articles);
-  console.log("Clicked Article articles", articles);
-
-  // If articles are not loaded yet, show loading state
-  if (!articles) {
-    return <div>Loading...</div>;
-  }
+  const { articles, clickedArticle } = useSelector((state) => state.articles);
 
   useEffect(() => {
-    if (articles.length === 0) {
+    if (!articles || articles.length === 0) {
+      // Fetch the article only if the articles list is empty
       dispatch(getArticle(slug));
     }
-  });
+  }, [articles, slug, dispatch]);
 
-  const { clickedArticle } = useSelector((state) => state.articles);
+  useEffect(() => {
+    // Scroll to the top when the component loads
+    window.scrollTo(0, 0);
+  }, []);
 
-  // Get the article based on the slug from the URL params
-  const article = articles.find((article) => article.slug === slug);
+  // Determine the displayed article
+  const articleFromList = articles?.find((article) => article.slug === slug);
+  const displayedArticle = articleFromList || clickedArticle;
 
-  const displayedArticle = clickedArticle || article;
-  // console.log("article", article);
-  // If the article is not found, show a not found message
+  // Handle loading and not found states
+  if (!articles && !clickedArticle) {
+    return <div>Loading...</div>;
+  }
   if (!displayedArticle) {
     return <div>Article not found</div>;
   }
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="bg-gray-100">
