@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"; // Importing useState here
 import { useDispatch, useSelector } from "react-redux";
-import Loading from "../assets/lotties/Animation - 1729259117182.json";
-import Lottie from "lottie-react";
 import { getArticles } from "../actions/articleActions";
 import ArticleCard from "../components/ArticleCard";
 import NavbarArticle from "../components/NavbarArticle";
 import { Link } from "react-router-dom";
 
-import { Check, X } from "lucide-react";
+import { X } from "lucide-react";
+import Footer from "../components/Footer";
 
 const ArticleGrid = ({ articles, loading }) => (
   <div>
@@ -56,17 +55,6 @@ const HeroSection = () => (
       </Link>
     </div>
   </div>
-);
-
-const Footer = () => (
-  <footer className="bg-gray-800 text-white py-6">
-    <div className="container mx-auto text-center">
-      <p className="text-sm">
-        &copy; {new Date().getFullYear()} Dev Labs. All Rights Reserved.
-      </p>
-      <p className="text-sm mt-2">Built with passion by the Dev Labs Team</p>
-    </div>
-  </footer>
 );
 
 const AboutSection = () => (
@@ -162,7 +150,7 @@ export default function BlogLandingPage() {
         <NavbarArticle />
       </div>
       {loggedIn && (
-        <div className="z-50 fixed top-5 right-1/2 transform translate-x-1/2 flex gap-3 justify-between items-center bg-gradient-to-r from-green-600 via-green-400 to-green-600 text-white p-3 shadow-md max-w-xs">
+        <div className="z-50 fixed top-5 right-1/2 transform translate-x-1/2 flex gap-3 justify-between items-center bg-gradient-to-r from-green-600 via-green-500 to-green-600 text-white py-3 sm:px-6 px-3 shadow-md max-w-xs">
           <h1>Login Successful</h1>
           <button
             onClick={() => (

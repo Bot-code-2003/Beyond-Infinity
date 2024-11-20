@@ -14,17 +14,18 @@ import AfterLogout from "./pages/AfterLogout";
 
 const App = () => {
   const user = localStorage.getItem("User");
+  const handleSuccess = (credentialResponse) => {
+    const decodedToken = jwtDecode(credentialResponse.credential);
+    localStorage.setItem("User", JSON.stringify(decodedToken));
+    localStorage.setItem("Loggedin", true);
+    window.location.href = "/";
+  };
   return (
     <div className="bg-gray-50">
       {!user && (
         <div className="hidden">
           <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              console.log(credentialResponse);
-              const decodedToken = jwtDecode(credentialResponse.credential);
-              localStorage.setItem("User", JSON.stringify(decodedToken));
-              window.location.reload();
-            }}
+            onSuccess={handleSuccess}
             onError={() => {
               console.log("Login Failed");
             }}

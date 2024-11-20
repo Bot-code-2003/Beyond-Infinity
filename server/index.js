@@ -1,6 +1,7 @@
 import express, { urlencoded } from "express";
 import mongoose from "mongoose";
 import articleRoutes from "./routes/articleRoutes.js";
+import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -22,6 +23,7 @@ app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
 
 // Define routes
 app.use("/article", articleRoutes);
+app.use("/subscription", subscriptionRoutes);
 
 // Serve index.html for root route
 app.get("/", (req, res) => {
