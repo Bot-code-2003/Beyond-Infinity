@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// const API = axios.create({
-//   baseURL: "https://beyond-infinity-server.vercel.app",
-// });
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({
+  baseURL: "https://beyond-infinity-server.vercel.app",
+});
+// const API = axios.create({ baseURL: "http://localhost:5000" });
 
 export const incrementViews = (slug) => async (dispatch) => {
   try {
