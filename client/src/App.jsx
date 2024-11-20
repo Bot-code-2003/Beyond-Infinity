@@ -8,25 +8,44 @@ import NavbarArticle from "./components/NavbarArticle";
 import Signin from "./pages/Signin";
 import Articles from "./pages/Articles";
 import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
+import Profile from "./pages/Profile";
+import AfterLogout from "./pages/AfterLogout";
 
 const App = () => {
+  const user = localStorage.getItem("User");
   return (
     <div className="bg-gray-50">
-      <div className="hidden">
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-          useOneTap
-        />
-      </div>
+      {!user && (
+        <div className="hidden">
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+              const decodedToken = jwtDecode(credentialResponse.credential);
+              localStorage.setItem("User", JSON.stringify(decodedToken));
+              window.location.reload();
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+            useOneTap
+          />
+        </div>
+      )}
       <Routes>
         <Route path="/" element={<BlogLandingPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/editor" element={<MarkdownEditor />} />
+        <Route path="/afterlogout" element={<AfterLogout />} />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <NavbarArticle />
+              <Profile />
+            </>
+          }
+        />
         <Route
           path="/article/:slug"
           element={

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const NavbarArticle = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const user = localStorage.getItem("User");
 
   // Empty dependency array ensures this runs only once when the component mounts
 
@@ -68,9 +69,25 @@ const NavbarArticle = () => {
             </Link>
           </li>
           <li>
-            <Link to="/signin" className="text-white hover:text-blue-300 block">
-              Sign In
-            </Link>
+            {user ? (
+              <Link
+                to="/profile"
+                className={`text-white hover:text-blue-300 block ${
+                  location.pathname === "/profile" ? "underline" : ""
+                }`}
+              >
+                Profile
+              </Link>
+            ) : (
+              <Link
+                to="/signin"
+                className={`text-white hover:text-blue-300 block ${
+                  location.pathname === "signin" ? "underline" : ""
+                }`}
+              >
+                Sign In
+              </Link>
+            )}
           </li>
         </ul>
       </div>

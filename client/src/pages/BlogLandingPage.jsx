@@ -7,6 +7,8 @@ import ArticleCard from "../components/ArticleCard";
 import NavbarArticle from "../components/NavbarArticle";
 import { Link } from "react-router-dom";
 
+import { Check, X } from "lucide-react";
+
 const ArticleGrid = ({ articles, loading }) => (
   <div>
     {loading ? (
@@ -125,6 +127,16 @@ export default function BlogLandingPage() {
   const dispatch = useDispatch();
   const { articles } = useSelector((state) => state.articles);
 
+  // const loggedIn = localStorage.getItem("Loggedin");
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const check = localStorage.getItem("Loggedin");
+    if (check) {
+      setLoggedIn(true);
+    }
+  }, []);
+
   const [isloading, setLoading] = useState(true); // Correct usage of useState inside the component
 
   useEffect(() => {
@@ -149,6 +161,20 @@ export default function BlogLandingPage() {
       <div className="mb-4">
         <NavbarArticle />
       </div>
+      {loggedIn && (
+        <div className="z-50 fixed top-5 right-1/2 transform translate-x-1/2 flex gap-3 justify-between items-center bg-gradient-to-r from-green-600 via-green-400 to-green-600 text-white p-3 shadow-md max-w-xs">
+          <h1>Login Successful</h1>
+          <button
+            onClick={() => (
+              localStorage.removeItem("Loggedin"), setLoggedIn(false)
+            )}
+            className="text-white bg-transparent border-0 hover:text-gray-200 focus:outline-none"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
       <div className="container mx-auto px-4 py-4">
         <HeroSection />
       </div>

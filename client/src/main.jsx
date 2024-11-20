@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 import reducers from "./reducers/index.js";
-import { GoogleLogin } from "@react-oauth/google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const store = configureStore({
