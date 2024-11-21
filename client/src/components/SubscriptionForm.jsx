@@ -22,12 +22,11 @@ const SubscriptionForm = () => {
         backgroundImage: `url(/footer.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         backgroundBlendMode: "overlay",
         backgroundColor: "rgba(0, 0, 0, 0.3)",
       }}
-      className="text-white py-8 px-6 max-w-7xl mx-auto"
+      className="text-white py-8 px-6 max-w-7xl mx-auto sm:bg-fixed"
     >
       <div className="max-w-3xl mx-auto text-center p-5 bg-black bg-opacity-70">
         <h3 className="text-xl font-semibold mb-4 uppercase">

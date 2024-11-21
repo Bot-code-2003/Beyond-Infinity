@@ -28,12 +28,12 @@ const ArticleGrid = ({ articles, loading }) => (
 
 const HeroSection = () => (
   <div
-    className="relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-center text-white"
+    className="sm:bg-fixed relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-center text-white"
     style={{
       backgroundImage: "url(/blog/alien2.jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundAttachment: "fixed",
+      // backgroundAttachment: "fixed",
       backgroundRepeat: "no-repeat",
       backgroundBlendMode: "overlay",
     }}
@@ -59,12 +59,12 @@ const HeroSection = () => (
 
 const AboutSection = () => (
   <div
-    className="container mx-auto px-4 py-8"
+    className="container mx-auto px-4 py-8 sm:bg-fixed"
     style={{
       backgroundImage: "url(/blog/about.jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundAttachment: "fixed",
+      // backgroundAttachment: "fixed",
       backgroundRepeat: "no-repeat",
       backgroundBlendMode: "overlay",
     }}
