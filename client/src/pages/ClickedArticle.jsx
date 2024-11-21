@@ -13,7 +13,7 @@ const ClickedArticle = () => {
 
   // Get the list of articles from the Redux store
   const { articles } = useSelector((state) => state.articles);
-  console.log("Clicked Article articles", articles);
+  // console.log("Clicked Article page articles", articles);
 
   // If articles are not loaded yet, show loading state
   if (!articles) {
@@ -32,8 +32,7 @@ const ClickedArticle = () => {
   // Get the article based on the slug from the URL params
   const article = articles.find((article) => article.slug === slug);
 
-  const displayedArticle = clickedArticle || article;
-  console.log("Displayed Article");
+  const displayedArticle = article ? article : clickedArticle;
 
   // console.log("article", article);
   // If the article is not found, show a not found message
