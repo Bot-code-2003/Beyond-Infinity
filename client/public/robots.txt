@@ -1,0 +1,9 @@
+# Cosmic Journey - robots.txt
+
+# Allow all bots to crawl everything except specific pages
+User-agent: *
+Disallow: /signin
+Disallow: /profile
+
+# Sitemap location (important for search engines)
+Sitemap: https://cosmicjourney.vercel.app/sitemap.xml

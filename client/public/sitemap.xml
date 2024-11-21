@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cosmicjourney.vercel.app/</loc>
+    <lastmod>2024-11-21</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cosmicjourney.vercel.app/articles</loc>
+    <lastmod>2024-11-21</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cosmicjourney.vercel.app/profile</loc>
+    <lastmod>2024-11-21</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cosmicjourney.vercel.app/signin</loc>
+    <lastmod>2024-11-21</lastmod>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Specific Articles -->
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/alien-relics-unearthly-artifacts-that-may-prove-we-are-not-alone</loc>
+    <lastmod>2024-11-21</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/olbers-paradox-curious-case-dark-night-sky</loc>
+    <lastmod>2024-11-19</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/the-silent-zone-places-where-technology-fails</loc>
+    <lastmod>2024-11-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/the-alien-signal-that-never-repeated</loc>
+    <lastmod>2024-11-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/how-the-universe-censors-its-strangest-secrets-to-maintain-order</loc>
+    <lastmod>2024-11-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/the-observer-effect-and-quantum-reality</loc>
+    <lastmod>2024-11-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cosmicjourney.vercel.app/article/holographic-principle-cosmic-illusion-or-reality</loc>
+    <lastmod>2024-11-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  
+</urlset>
