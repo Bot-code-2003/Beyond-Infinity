@@ -58,7 +58,7 @@ const SubscriptionForm = () => {
             </span>
           </p>
         ) : (
-          location.pathname !== "/" && (
+          location.pathname === "/profile" && ( // show unsubscribe link only on profile page
             <p
               className="mt-4 text-blue-400 text-sm underline cursor-pointer"
               onClick={handleUnsubscribe}
