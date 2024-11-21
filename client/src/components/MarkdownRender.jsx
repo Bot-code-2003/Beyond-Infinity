@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Lottie from "lottie-react";
 import LoadingAnimation from "../assets/lotties/Animation - 1729259117182.json";
+import SubscriptionForm from "./SubscriptionForm";
 
 export default function MarkdownRender({
   markdownContent,
@@ -42,6 +43,7 @@ export default function MarkdownRender({
                 </p>
               </div>
             )}
+            <SubscriptionForm />
           </header>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
