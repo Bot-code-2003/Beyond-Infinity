@@ -11,6 +11,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import Profile from "./pages/Profile";
 import AfterLogout from "./pages/AfterLogout";
+import EmailComponent from "./components/EmailComponent";
 
 const App = () => {
   const user = localStorage.getItem("User");
@@ -34,6 +35,7 @@ const App = () => {
         </div>
       )}
       <Routes>
+        <Route path="/sendEmail" element={<EmailComponent />} />
         <Route path="/" element={<BlogLandingPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/editor" element={<MarkdownEditor />} />

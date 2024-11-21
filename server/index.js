@@ -2,6 +2,7 @@ import express, { urlencoded } from "express";
 import mongoose from "mongoose";
 import articleRoutes from "./routes/articleRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
+import emailRouter from "./routes/emailsend.js"; // Import the email route
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -24,13 +25,12 @@ app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
 // Define routes
 app.use("/article", articleRoutes);
 app.use("/subscription", subscriptionRoutes);
+app.use(emailRouter); // Add email routes
 
 // Serve index.html for root route
 app.get("/", (req, res) => {
   res.send("Welcome to Dev Labs Server");
 });
-
-console.log(url);
 
 // Connect to MongoDB and start the server
 mongoose
