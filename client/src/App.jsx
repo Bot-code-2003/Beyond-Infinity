@@ -12,6 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import Profile from "./pages/Profile";
 import AfterLogout from "./pages/AfterLogout";
 import EmailComponent from "./components/EmailComponent";
+import Footer from "./components/Footer";
 
 const App = () => {
   const user = localStorage.getItem("User");
@@ -55,10 +56,19 @@ const App = () => {
             <>
               <NavbarArticle />
               <ClickedArticle />
+              <Footer />
             </>
           }
         />
-        <Route path="/articles" element={<Articles />} />
+        <Route
+          path="/articles"
+          element={
+            <>
+              <Articles />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/signin"
           element={
