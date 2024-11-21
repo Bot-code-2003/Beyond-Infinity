@@ -3,6 +3,7 @@ import { LogOut } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { subscribe } from "../actions/subscriptionActions";
 import SubscriptionForm from "../components/SubscriptionForm";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
   // Only parse the user if it exists in localStorage
@@ -18,6 +19,10 @@ const Profile = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto text-gray-900">
+      <Helmet>
+        <title>Profile</title>
+        <meta name="description" content="Profile" />
+      </Helmet>
       <div className="bg-gray-50 sm:bg-white w-full p-6 sm:border sm:border-gray-300 sm:shadow-md">
         {user?.picture && (
           <img

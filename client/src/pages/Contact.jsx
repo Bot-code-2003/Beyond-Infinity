@@ -1,9 +1,14 @@
 import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
   return (
     <div>
+      <Helmet>
+        <title>Contact</title>
+        <meta name="description" content="Contact" />
+      </Helmet>
       <h1
         className="cursor-pointer text-blue-600 hover:underline absolute top-5 left-5"
         onClick={() => window.history.back()}

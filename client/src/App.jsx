@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import AfterLogout from "./pages/AfterLogout";
 import EmailComponent from "./components/EmailComponent";
 import Footer from "./components/Footer";
+import { Helmet } from "react-helmet";
 
 const App = () => {
   const user = localStorage.getItem("User");

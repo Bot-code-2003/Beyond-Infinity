@@ -37,17 +37,26 @@ export const getArticles = () => async (dispatch) => {
 };
 
 export const submitArticle =
-  (title, description, markdown, articleHeaderImage, imageCredit, slug) =>
+  (
+    title,
+    description,
+    markdown,
+    articleHeaderImage,
+    imageCredit,
+    slug,
+    keywords
+  ) =>
   async (dispatch) => {
-    console.log(
-      "submitArticle action called",
-      title,
-      description,
-      markdown,
-      articleHeaderImage,
-      imageCredit,
-      slug
-    );
+    // console.log(
+    //   "submitArticle action called",
+    //   title,
+    //   description,
+    //   markdown,
+    //   articleHeaderImage,
+    //   imageCredit,
+    //   slug,
+    //   keywords
+    // );
 
     const { data } = await API.post("/article/submit", {
       title,
@@ -56,7 +65,8 @@ export const submitArticle =
       articleHeaderImage,
       imageCredit,
       slug,
+      keywords,
     });
 
-    console.log("Recieved data: ", data);
+    // console.log("Recieved data: ", data);
   };

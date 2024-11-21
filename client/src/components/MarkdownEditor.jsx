@@ -11,6 +11,7 @@ const MarkdownEditor = () => {
   const [slug, setSlug] = useState("");
   const [articleHeaderImage, setArticleHeaderImage] = useState("");
   const [imageCredit, setImageCredit] = useState("");
+  const [keywords, setKeywords] = useState("");
 
   // Handle text changes in the editor
   const handleMarkdownChange = (event) => {
@@ -25,7 +26,8 @@ const MarkdownEditor = () => {
         markdown,
         articleHeaderImage,
         imageCredit,
-        slug
+        slug,
+        keywords
       )
     );
   };
@@ -76,6 +78,13 @@ const MarkdownEditor = () => {
           value={markdown}
           onChange={handleMarkdownChange}
           placeholder="Write your blog in Markdown"
+        />
+        <input
+          type="text"
+          onChange={(e) => setKeywords(e.target.value)}
+          value={keywords}
+          className="h-10 border mb-5"
+          placeholder="Enter keywords comma separated"
         />
         <button
           onClick={handlePublish}

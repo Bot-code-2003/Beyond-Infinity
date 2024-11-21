@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 // Connect to MongoDB and start the server
 mongoose
-  // .connect("mongodbe://localhost:27017/Beyond-Infinity", {
+  // .connect("mongodb://localhost:27017/Beyond-Infinity", {
   .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

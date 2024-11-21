@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 import { X } from "lucide-react";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 
 const ArticleGrid = ({ articles, loading }) => (
   <div>
@@ -146,6 +147,17 @@ export default function BlogLandingPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>Cosmic Journey</title>
+        <meta
+          name="description"
+          content="Cosmic Journey explores the wonders of space and the paradoxes that challenge our understanding of reality."
+        />
+        <meta
+          name="keywords"
+          content="space, paradoxes, understanding, reality, science fiction, cosmic journey, astronomy, physics, universe, galaxies"
+        />
+      </Helmet>
       <div className="mb-4">
         <NavbarArticle />
       </div>

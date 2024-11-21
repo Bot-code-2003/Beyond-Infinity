@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getArticle, incrementViews } from "../actions/articleActions"; // Assuming you have this action to fetch articles
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Helmet } from "react-helmet";
 
 const ClickedArticle = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,17 @@ const ClickedArticle = () => {
 
   return (
     <div className="bg-gray-100">
+      <Helmet>
+        <title>{displayedArticle.title}</title>
+        <meta
+          name="description"
+          content={displayedArticle.description?.slice(0, 100)}
+        />
+        <meta
+          name="keywords"
+          content={displayedArticle.keywords ? displayedArticle.keywords : ""}
+        />
+      </Helmet>
       <div
         onClick={() => window.history.back() || navigate("/")}
         className="sm:fixed py-2 px-4 cursor-pointer hover:underline inline-block border-2 border-black mt-2 ml-2"
