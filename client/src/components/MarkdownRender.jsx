@@ -93,10 +93,11 @@ export default function MarkdownRender({
         {/* Open Graph tags for social media */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={articleHeaderImage} />
+        <meta property="og:image:secure_url" content={articleHeaderImage} />
+        <meta property="og:image:width" content="2500" />
+        <meta property="og:image:height" content="1330" />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:type" content="article" />
-
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={articleHeaderImage} />
