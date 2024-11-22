@@ -48,7 +48,7 @@ export default function MarkdownRender({
           href={shareLinks.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-3 py-1 text-sm bg-blue-500 text-white  hover:bg-blue-600"
         >
           Share on Twitter
         </a>
@@ -56,7 +56,7 @@ export default function MarkdownRender({
           href={shareLinks.reddit}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-1 text-sm bg-orange-500 text-white rounded hover:bg-orange-600"
+          className="px-3 py-1 text-sm bg-orange-500 text-white  hover:bg-orange-600"
         >
           Share on Reddit
         </a>
@@ -64,7 +64,7 @@ export default function MarkdownRender({
           href={shareLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600"
+          className="px-3 py-1 text-sm bg-green-500 text-white  hover:bg-green-600"
         >
           Share on WhatsApp
         </a>
@@ -72,7 +72,7 @@ export default function MarkdownRender({
           href={shareLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-1 text-sm bg-blue-700 text-white rounded hover:bg-blue-800"
+          className="px-3 py-1 text-sm bg-blue-700 text-white  hover:bg-blue-800"
         >
           Share on LinkedIn
         </a>
@@ -207,7 +207,7 @@ export default function MarkdownRender({
             {markdownContent}
           </ReactMarkdown>
           {/* <div className="mt-8">
-            <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded shadow-sm hover:bg-gray-300">
+            <button className="px-4 py-2 bg-gray-200 text-gray-700  shadow-sm hover:bg-gray-300">
               Like
             </button>
           </div> */}
