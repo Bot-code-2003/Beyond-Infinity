@@ -29,7 +29,7 @@ export default function MarkdownRender({
   console.log("articleUrl", articleUrl);
 
   const shareText = encodeURIComponent(
-    `${title} - Read more on Cosmic Journey: ${articleUrl}`
+    `${title} - Read more on Cosmic Journey: \n${articleUrl}`
   );
 
   const shareLinks = {
@@ -89,19 +89,6 @@ export default function MarkdownRender({
 
   return (
     <div className="min-h-screen font-mono bg-white">
-      <Helmet>
-        {/* Open Graph tags for social media */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image:secure_url" content={articleHeaderImage} />
-        <meta property="og:image:width" content="2500" />
-        <meta property="og:image:height" content="1330" />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={articleHeaderImage} />
-      </Helmet>
       <div className="max-w-3xl mx-auto px-4 py-12">
         <article>
           <header className="mb-8">
