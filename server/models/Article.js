@@ -21,6 +21,10 @@ const ArticleSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  keywords: {
+    type: String,
+    default: "",
+  },
   articleHeaderImage: {
     type: String,
     default: "",
