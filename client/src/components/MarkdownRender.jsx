@@ -11,6 +11,7 @@ export default function MarkdownRender({
   description,
   articleHeaderImage,
   imageCredit,
+  slug, // New prop for generating share links
 }) {
   if (!markdownContent || !title) {
     return (
@@ -20,8 +21,73 @@ export default function MarkdownRender({
     );
   }
 
+  console.log("Slug", slug);
+
+  const baseUrl = "https://cosmicjourney.vercel.app/article";
+  const articleUrl = `${baseUrl}/${slug}`;
+  console.log("articleUrl", articleUrl);
+
+  const shareText = encodeURIComponent(
+    `${title} - Read more on Cosmic Journey: ${articleUrl}`
+  );
+
+  const shareLinks = {
+    twitter: `https://twitter.com/intent/tweet?url=${articleUrl}&text=${shareText}`,
+    reddit: `https://www.reddit.com/submit?url=${articleUrl}&title=${encodeURIComponent(
+      title
+    )}`,
+    whatsapp: `https://api.whatsapp.com/send?text=${shareText}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${articleUrl}`,
+  };
+
+  const ShareButtons = () => (
+    <div className="mt-6">
+      <h3 className="text-lg font-semibold mb-2">Share this article:</h3>
+      <div className="flex space-x-4">
+        <a
+          href={shareLinks.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Share on Twitter
+        </a>
+        <a
+          href={shareLinks.reddit}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1 text-sm bg-orange-500 text-white rounded hover:bg-orange-600"
+        >
+          Share on Reddit
+        </a>
+        <a
+          href={shareLinks.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600"
+        >
+          Share on WhatsApp
+        </a>
+        <a
+          href={shareLinks.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1 text-sm bg-blue-700 text-white rounded hover:bg-blue-800"
+        >
+          Share on LinkedIn
+        </a>
+      </div>
+      <p className="text-sm text-gray-500 mt-2">
+        Article URL:{" "}
+        <a href={articleUrl} className="text-blue-600 hover:underline">
+          {articleUrl}
+        </a>
+      </p>
+    </div>
+  );
+
   return (
-    <div className="min-h-screen font-mono bg-white ">
+    <div className="min-h-screen font-mono bg-white">
       <div className="max-w-3xl mx-auto px-4 py-12">
         <article>
           <header className="mb-8">
@@ -29,7 +95,7 @@ export default function MarkdownRender({
               {title}
             </h1>
             {description && (
-              <p className="text-md italic text-gray-500  ">{description}</p>
+              <p className="text-md italic text-gray-500">{description}</p>
             )}
             {articleHeaderImage && (
               <div>
@@ -38,12 +104,13 @@ export default function MarkdownRender({
                   alt=""
                   className="w-full h-auto object-cover mt-6"
                 />
-                <p className="text-sm text-gray-500  mt-2">
+                <p className="text-sm text-gray-500 mt-2">
                   Image credit: {imageCredit}
                 </p>
               </div>
             )}
             <SubscriptionForm />
+            <ShareButtons /> {/* Share buttons below the header */}
           </header>
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -71,13 +138,13 @@ export default function MarkdownRender({
               ),
               blockquote: ({ node, ...props }) => (
                 <blockquote
-                  className="border-l-4 border-gray-300  pl-4 italic my-4 text-gray-600 "
+                  className="border-l-4 border-gray-300 pl-4 italic my-4 text-gray-600"
                   {...props}
                 />
               ),
               a: ({ node, ...props }) => (
                 <a
-                  className="text-blue-600 hover:underline "
+                  className="text-blue-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                   {...props}
@@ -90,7 +157,7 @@ export default function MarkdownRender({
                   <div className="my-4">
                     <img className="w-full h-auto" {...props} alt={alt || ""} />
                     {alt && (
-                      <p className="text-sm text-gray-500  mt-2">
+                      <p className="text-sm text-gray-500 mt-2">
                         Image credit: {alt}
                       </p>
                     )}
@@ -101,18 +168,18 @@ export default function MarkdownRender({
               code: ({ node, inline, ...props }) =>
                 inline ? (
                   <code
-                    className="bg-gray-100 px-1 py-0.5  text-sm"
+                    className="bg-gray-100 px-1 py-0.5 text-sm"
                     {...props}
                   />
                 ) : (
-                  <pre className="bg-gray-100  p-3  overflow-x-auto text-sm my-4">
+                  <pre className="bg-gray-100 p-3 overflow-x-auto text-sm my-4">
                     <code {...props} />
                   </pre>
                 ),
               table: ({ node, ...props }) => (
                 <div className="overflow-x-auto my-4">
                   <table
-                    className="min-w-full divide-y divide-gray-200 "
+                    className="min-w-full divide-y divide-gray-200"
                     {...props}
                   />
                 </div>
@@ -130,7 +197,7 @@ export default function MarkdownRender({
                 />
               ),
               mark: ({ node, ...props }) => (
-                <mark className="bg-yellow-100  px-1 py-0.5 " {...props} />
+                <mark className="bg-yellow-100 px-1 py-0.5" {...props} />
               ),
               strong: ({ node, ...props }) => (
                 <strong className="font-semibold text-black" {...props} />
@@ -139,6 +206,12 @@ export default function MarkdownRender({
           >
             {markdownContent}
           </ReactMarkdown>
+          {/* <div className="mt-8">
+            <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded shadow-sm hover:bg-gray-300">
+              Like
+            </button>
+          </div> */}
+          <ShareButtons /> {/* Share buttons at the end */}
         </article>
       </div>
     </div>

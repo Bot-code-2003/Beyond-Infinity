@@ -28,15 +28,14 @@ const AfterLogout = () => {
             </h1>
             <p className="text-gray-600 mb-4">
               Thank you for being a part of this stellar adventure! Your
-              contributions have helped illuminate the vast expanse of
-              possibilities.
+              presence adds to the vast expanse of knowledge and possibilities.
             </p>
             <p className="text-gray-600 mb-4">
-              Cosmic Journey is your launchpad for exploring new frontiers,
-              sharing your discoveries, and connecting with fellow adventurers.
+              Cosmic Journey is your platform to explore new frontiers, read
+              fascinating stories, and connect with fellow explorers.
             </p>
             <p className="text-gray-600 font-semibold">
-              The universe is waiting — we can't wait to see what you'll create
+              The universe is waiting — we can’t wait for you to see what’s
               next!
             </p>
           </div>

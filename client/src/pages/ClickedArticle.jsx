@@ -53,14 +53,36 @@ const ClickedArticle = () => {
           name="description"
           content={displayedArticle.description?.slice(0, 100)}
         />
+        <meta name="keywords" content={displayedArticle.keywords || ""} />
+
+        {/* Open Graph tags for social media */}
+        <meta property="og:title" content={displayedArticle.title} />
         <meta
-          name="keywords"
-          content={displayedArticle.keywords ? displayedArticle.keywords : ""}
+          property="og:description"
+          content={displayedArticle.description}
+        />
+        <meta
+          property="og:image"
+          content={displayedArticle.articleHeaderImage}
+        />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={displayedArticle.title} />
+        <meta
+          name="twitter:description"
+          content={displayedArticle.description}
+        />
+        <meta
+          name="twitter:image"
+          content={displayedArticle.articleHeaderImage}
         />
       </Helmet>
       <div
         onClick={() => window.history.back() || navigate("/")}
-        className="sm:fixed py-2 px-4 cursor-pointer hover:underline inline-block border-2 border-black mt-2 ml-2"
+        className="bg-white fixed py-2 px-4 cursor-pointer hover:underline inline-block border-2 border-black mt-2 ml-2"
       >
         <ArrowBackIcon /> Back
       </div>
@@ -72,6 +94,7 @@ const ClickedArticle = () => {
           description={displayedArticle.description}
           articleHeaderImage={displayedArticle.articleHeaderImage}
           imageCredit={displayedArticle.imageCredit}
+          slug={displayedArticle.slug}
         />
       )}
     </div>
