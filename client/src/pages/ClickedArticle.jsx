@@ -83,8 +83,12 @@ const ClickedArticle = () => {
       </Helmet>
       <div
         onClick={() => window.history.back() || navigate("/")}
-        className="bg-white fixed py-2 px-4 cursor-pointer hover:underline inline-block border-2 border-black mt-2 ml-2"
+        className="hidden bg-white fixed py-2 px-4 cursor-pointer hover:underline sm:inline-block border-2 border-black mt-2 ml-2"
       >
+        <ArrowBackIcon /> Back
+      </div>
+
+      <div className="sm:hidden text-black bg-white mt-4 absolute left-2">
         <ArrowBackIcon /> Back
       </div>
 
@@ -98,6 +102,10 @@ const ClickedArticle = () => {
           slug={displayedArticle.slug}
         />
       )}
+
+      <div className="sm:hidden text-black bg-white mb-4 ml-2">
+        <ArrowBackIcon /> Back
+      </div>
     </div>
   );
 };

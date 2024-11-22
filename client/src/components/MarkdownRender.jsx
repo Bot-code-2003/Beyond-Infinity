@@ -4,7 +4,10 @@ import remarkGfm from "remark-gfm";
 import Lottie from "lottie-react";
 import LoadingAnimation from "../assets/lotties/Animation - 1729259117182.json";
 import SubscriptionForm from "./SubscriptionForm";
-import { Helmet } from "react-helmet";
+import XIcon from "@mui/icons-material/X";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import RedditIcon from "@mui/icons-material/Reddit";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function MarkdownRender({
   markdownContent,
@@ -29,7 +32,7 @@ export default function MarkdownRender({
   console.log("articleUrl", articleUrl);
 
   const shareText = encodeURIComponent(
-    `${title} - Read more on Cosmic Journey: \n${articleUrl}`
+    `${title}\nRead more on Cosmic Journey: ${articleUrl}`
   );
 
   const shareLinks = {
@@ -51,7 +54,7 @@ export default function MarkdownRender({
           rel="noopener noreferrer"
           className="px-3 py-1 text-sm bg-blue-500 text-white  hover:bg-blue-600"
         >
-          Share on Twitter
+          <XIcon />
         </a>
         <a
           href={shareLinks.reddit}
@@ -59,7 +62,7 @@ export default function MarkdownRender({
           rel="noopener noreferrer"
           className="px-3 py-1 text-sm bg-orange-500 text-white  hover:bg-orange-600"
         >
-          Share on Reddit
+          <RedditIcon />
         </a>
         <a
           href={shareLinks.whatsapp}
@@ -67,7 +70,7 @@ export default function MarkdownRender({
           rel="noopener noreferrer"
           className="px-3 py-1 text-sm bg-green-500 text-white  hover:bg-green-600"
         >
-          Share on WhatsApp
+          <WhatsAppIcon />
         </a>
         <a
           href={shareLinks.linkedin}
@@ -75,7 +78,7 @@ export default function MarkdownRender({
           rel="noopener noreferrer"
           className="px-3 py-1 text-sm bg-blue-700 text-white  hover:bg-blue-800"
         >
-          Share on LinkedIn
+          <LinkedInIcon sx={{ borderRadius: "0px" }} />
         </a>
       </div>
       <p className="text-sm text-gray-500 mt-2">
