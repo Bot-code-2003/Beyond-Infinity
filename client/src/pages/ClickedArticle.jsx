@@ -54,29 +54,6 @@ const ClickedArticle = () => {
           content={displayedArticle.description?.slice(0, 100)}
         />
         <meta name="keywords" content={displayedArticle.keywords || ""} />
-
-        {/* Open Graph tags for social media */}
-        <meta property="og:title" content={displayedArticle.title} />
-        <meta
-          property="og:description"
-          content={displayedArticle.description}
-        />
-        <meta
-          property="og:image"
-          content={displayedArticle.articleHeaderImage}
-        />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:type" content="article" />
-
-        <meta name="twitter:title" content={displayedArticle.title} />
-        <meta
-          name="twitter:description"
-          content={displayedArticle.description}
-        />
-        <meta
-          name="twitter:image"
-          content={displayedArticle.articleHeaderImage}
-        />
       </Helmet>
       <div
         onClick={() => window.history.back() || navigate("/")}

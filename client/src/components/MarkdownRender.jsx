@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import Lottie from "lottie-react";
 import LoadingAnimation from "../assets/lotties/Animation - 1729259117182.json";
 import SubscriptionForm from "./SubscriptionForm";
+import { Helmet } from "react-helmet";
 
 export default function MarkdownRender({
   markdownContent,
@@ -88,6 +89,30 @@ export default function MarkdownRender({
 
   return (
     <div className="min-h-screen font-mono bg-white">
+      <Helmet>
+        {/* Open Graph tags for social media */}
+        <meta property="og:title" content={displayedArticle.title} />
+        <meta
+          property="og:description"
+          content={displayedArticle.description}
+        />
+        <meta
+          property="og:image"
+          content={displayedArticle.articleHeaderImage}
+        />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="article" />
+
+        <meta name="twitter:title" content={displayedArticle.title} />
+        <meta
+          name="twitter:description"
+          content={displayedArticle.description}
+        />
+        <meta
+          name="twitter:image"
+          content={displayedArticle.articleHeaderImage}
+        />
+      </Helmet>
       <div className="max-w-3xl mx-auto px-4 py-12">
         <article>
           <header className="mb-8">
