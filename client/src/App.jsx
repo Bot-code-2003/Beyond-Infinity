@@ -14,6 +14,7 @@ import AfterLogout from "./pages/AfterLogout";
 import EmailComponent from "./components/EmailComponent";
 import Footer from "./components/Footer";
 import { Helmet } from "react-helmet";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const user = localStorage.getItem("User");
@@ -25,6 +26,7 @@ const App = () => {
   };
   return (
     <div className="bg-gray-50">
+      <Analytics />
       {!user && (
         <div className="hidden">
           <GoogleLogin
