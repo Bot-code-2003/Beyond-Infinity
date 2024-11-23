@@ -19,7 +19,15 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(urlencoded({ limit: "30mb", extended: true }));
 
 // Use CORS middleware
-app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
+// app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
+app.use(
+  cors({
+    origin: "https://cosmicjourney.vercel.app", // Allow your client domain
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 // app.use(cors({ origin: "http://localhost:5173" }));
 
 // Define routes
