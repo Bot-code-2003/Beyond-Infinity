@@ -25,7 +25,7 @@ app.use(cors({ origin: "https://cosmicjourney.vercel.app" }));
 // Define routes
 app.use("/article", articleRoutes);
 app.use("/subscription", subscriptionRoutes);
-app.use(emailRouter); // Add email routes
+app.use("/email", emailRouter); // Add email routes
 
 // Serve index.html for root route
 app.get("/", (req, res) => {

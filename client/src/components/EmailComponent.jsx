@@ -11,6 +11,10 @@ const EmailComponent = () => {
     subject: "",
   });
 
+  const API = axios.create({
+    baseURL: "https://beyond-infinity-server.vercel.app",
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEmailData((prevData) => ({
@@ -21,11 +25,7 @@ const EmailComponent = () => {
 
   const handleSend = async () => {
     try {
-      const response = await axios.post(
-        // "http://localhost:5000/send-email",
-        "https://beyond-infinity-server.vercel.app/send-email",
-        emailData
-      );
+      const response = await API.post("/email/send-email", emailData);
       alert(response.data.message || "Email sent successfully!");
     } catch (error) {
       console.error("Error sending email:", error);
