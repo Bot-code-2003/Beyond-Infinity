@@ -2,8 +2,8 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: "https://beyond-infinity-server.vercel.app",
+  // baseURL: "http://localhost:5000",
 });
-// const API = axios.create({ baseURL: "http://localhost:5000" });
 
 export const incrementViews = (slug) => async (dispatch) => {
   try {
@@ -70,3 +70,12 @@ export const submitArticle =
 
     // console.log("Recieved data: ", data);
   };
+
+export const getMostViewdArticles = () => async (dispatch) => {
+  try {
+    const { data } = await API.get("/article/getMostViewdArticles");
+    dispatch({ type: "GET_MOST_VIEWD_ARTICLES", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};

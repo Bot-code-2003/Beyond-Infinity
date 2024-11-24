@@ -12,7 +12,8 @@ const EmailComponent = () => {
   });
 
   const API = axios.create({
-    baseURL: "https://beyond-infinity-server.vercel.app",
+    // baseURL: "https://beyond-infinity-server.vercel.app",
+    baseURL: "http://localhost:5000",
   });
 
   const handleChange = (e) => {

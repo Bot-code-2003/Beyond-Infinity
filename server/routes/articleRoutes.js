@@ -83,4 +83,15 @@ router.post("/submit", async (req, res) => {
   }
 });
 
+router.get("/getMostViewdArticles", async (req, res) => {
+  // top 3 articles
+  try {
+    const articles = await Article.find({}).sort({ views: -1 }).limit(3);
+    console.log(articles);
+    res.status(200).send(articles);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 export default router;

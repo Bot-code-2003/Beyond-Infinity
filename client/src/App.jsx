@@ -15,6 +15,7 @@ import EmailComponent from "./components/EmailComponent";
 import Footer from "./components/Footer";
 import { Helmet } from "react-helmet";
 import { Analytics } from "@vercel/analytics/react";
+import Credits from "./pages/Credits";
 
 const App = () => {
   const user = localStorage.getItem("User");
@@ -81,6 +82,8 @@ const App = () => {
             </>
           }
         />
+
+        <Route path="/credits" element={<Credits />} />
       </Routes>
     </div>
   );

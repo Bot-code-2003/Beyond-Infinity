@@ -1,5 +1,6 @@
 import React from "react";
 import SubscriptionForm from "../components/SubscriptionForm";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,6 +13,9 @@ const Footer = () => {
         <p className="text-sm text-gray-400 mt-1">
           Built with dedication by the Cosmic Journey Team
         </p>
+        <Link className="text-sm text-gray-400 mt-1" to="/credits">
+          Credits
+        </Link>
       </div>
     </footer>
   );
