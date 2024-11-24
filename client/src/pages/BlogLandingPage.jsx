@@ -158,6 +158,7 @@ export default function BlogLandingPage() {
   }, []);
 
   const [isloading, setLoading] = useState(true); // Correct usage of useState inside the component
+  const [isloading1, setLoading1] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -165,12 +166,29 @@ export default function BlogLandingPage() {
         window.scrollTo(0, 0);
         if (articles.length === 0) {
           await dispatch(getArticles());
-          await dispatch(getMostViewdArticles());
         }
       } catch (error) {
         console.error("Error fetching articles:", error);
       } finally {
         setLoading(false); // Set loading to false when data fetching is complete
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
+
+  // one for mostviewd
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        window.scrollTo(0, 0);
+        if (mostViewedArticles.length === 0) {
+          await dispatch(getMostViewdArticles());
+        }
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      } finally {
+        setLoading1(false); // Set loading to false when data fetching is complete
       }
     };
 
@@ -252,7 +270,7 @@ export default function BlogLandingPage() {
 
           <MostViewedArticleGrid
             mostViewedArticles={mostViewedArticles}
-            loading={isloading}
+            loading={isloading1}
           />
         </div>
       </main>

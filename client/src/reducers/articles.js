@@ -3,6 +3,7 @@ const initialState = {
   clickedArticle: {},
   mostViewedArticles: [],
   loading: false, // Add loading state here if not already defined
+  mostviewloading: false,
 };
 
 export default (state = initialState, action) => {
@@ -21,7 +22,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         mostViewedArticles: action.payload,
-        loading: false,
+        mostviewloading: false,
       };
     case "GET_ARTICLE":
       return {
