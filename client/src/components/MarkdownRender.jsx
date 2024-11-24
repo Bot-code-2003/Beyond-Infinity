@@ -81,12 +81,6 @@ export default function MarkdownRender({
           <LinkedInIcon sx={{ borderRadius: "0px" }} />
         </a>
       </div>
-      <p className="text-sm text-gray-500 mt-2">
-        Article URL:{" "}
-        <a href={articleUrl} className="text-blue-600 hover:underline">
-          {articleUrl}
-        </a>
-      </p>
     </div>
   );
 
@@ -126,7 +120,7 @@ export default function MarkdownRender({
                 <h2 className="text-xl font-semibold mt-6 mb-3" {...props} />
               ),
               h3: ({ node, ...props }) => (
-                <h3 className="text-lg font-medium mt-4 mb-2" {...props} />
+                <h3 className="text-lg font-semibold mt-4 mb-2" {...props} />
               ),
               p: ({ node, ...props }) => (
                 <p className="mb-4 leading-relaxed text-gray-700" {...props} />

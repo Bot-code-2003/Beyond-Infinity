@@ -103,7 +103,7 @@ const ClickedArticle = () => {
         />
       )}
 
-      <div className="sm:hidden text-black bg-white mb-4 ml-2">
+      <div className="sm:hidden text-black bg-white mb-4 ml-2r">
         <ArrowBackIcon /> Back
       </div>
     </div>

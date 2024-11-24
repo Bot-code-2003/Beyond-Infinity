@@ -94,7 +94,9 @@ const AboutSection = () => {
       <div className="bg-white p-6 shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-3 flex flex-col justify-between">
-            <p className={`text-lg mb-4 ${isExpanded ? "" : "line-clamp-6"}`}>
+            <p
+              className={`text-lg mb-4 ${isExpanded ? "" : "line-clamp-6 sm:line-clamp-none"}`}
+            >
               Hi, I'm the owner of{" "}
               <a
                 href="https://dev-labs.vercel.app"
